@@ -7,25 +7,30 @@ import Link from 'next/link';
 
 import Page from './add/page';
 
+import { Inter } from 'next/font/google'
+ 
+const inter = Inter({ subsets: ['latin'] })
+
 
 export default function Home() {
 
+  
 
 
   const [newPosts, setNewPosts] = useState([])
-  const [likeCount, setLikeCount] = useState(0)
+  // const [likeCount, setLikeCount] = useState(0)
 
-  // let totalLikes = likeCount - dislikeCount;
+  // // let totalLikes = likeCount - dislikeCount;
 
-  const increaseLikes = () => {
-    setLikeCount(likeCount + 1)
-  }
+  // const increaseLikes = () => {
+  //   setLikeCount(likeCount + 1)
+  // }
 
-  const decreaseLikes = () => {
-    if (likeCount > 0) {
-      setLikeCount(likeCount - 1)
-    }
-  }
+  // const decreaseLikes = () => {
+  //   if (likeCount > 0) {
+  //     setLikeCount(likeCount - 1)
+  //   }
+  // }
 
 
   useEffect(() => {
@@ -66,14 +71,15 @@ export default function Home() {
 
   return (
     <>
-
+    
+      <div className='bg-gradient-to-tl from-sky-500 to-gray-300 fon'>
 
       <div>
-        <h1 className='text-4xl font-bold'>Welcome to the movie app</h1>
+        <h1 className='text-4xl font-bold text-center'>InstaMovie</h1>
         <Link href='/add'>Watch movies</Link>
       </div>
 
-      <div className='p-4 w-full h-full flex flex-col'>
+      <div className='p-4 w-full h-full justify-center flex-col'>
 
         {newPosts && newPosts.map((newPost) => {
 
@@ -88,13 +94,15 @@ export default function Home() {
           </MediaCard>
         })}
 
-        <button onClick={increaseLikes}>Like!</button>
+        {/* <button onClick={increaseLikes}>Like!</button>
         <button onClick={decreaseLikes}>UnLike!</button>
-        <h2>{likeCount}</h2>
+        <h2>{likeCount}</h2> */}
+
+      </div>
 
       </div>
     </>
-
+    
   )
 }
 
