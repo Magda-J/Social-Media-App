@@ -66,6 +66,8 @@ export default function Home() {
 
   return (
     <>
+
+
       <div>
         <h1 className='text-4xl font-bold'>Welcome to the movie app</h1>
         <Link href='/add'>Watch movies</Link>
@@ -92,6 +94,7 @@ export default function Home() {
 
       </div>
     </>
+
   )
 }
 
