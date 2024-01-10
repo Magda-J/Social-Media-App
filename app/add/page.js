@@ -12,6 +12,9 @@ const Page = () => {
     const [isError, setIsError] = useState(false)
 
 
+
+
+
     const handleInputChange = (event) => {
         setPostObject({
             ...postObject,
@@ -39,9 +42,12 @@ const Page = () => {
         });
 
         setIsSuccess(true);
+
+
+
         setTimeout(() => {
             setIsSuccess(false)
-        }, 3000)
+        }, 5000000)
         setPostObject({
             title: '',
             username: '',
@@ -55,43 +61,37 @@ const Page = () => {
     }
 
 
-    // setMovies((prevMovies) => {
-    //     const updatedMovies = [...prevMovies, movieObject];
-    //     localStorage.setItem('movies', JSON.stringify(updatedMovies));
-    //     return updatedMovies;
-    // });
-    // setIsSuccess(true);
-    // setMovieObject({
-    //     title: '',
-    //     opinion: '',
-    //     watched: false,
-    //     img: '',
-    // });
-
-
-    // const handleSubmit = (event) => {
-    //     event.preventDefault();
-    //     if (!movieObject.title || !movieObject.opinion) {
-    //         console.log("there is an error");
-    //         setIsError(true);
-    //         setTimeout(() => {
-    //             setIsError(false);
-    //         }, 3000);
-    //         return;
-    //     }
-
 
 
     return (
-        <div className='p-4'>
+        <div className='relative min-h-screen min-w-screen p-4'>
             <div>
                 <h1
                     className='text-2xl font-bold text-yellow-500'>Submit A Review!</h1>
             </div>
 
             {isError && (<p className='text-red-500'>Please fill in all fields</p>)}
+
+            {isSuccess && (
+
+                <div className='absolute bg-gray-800 p-4 m-4' style={{
+                    top: '50%',
+                    left: '50%',
+                    transform: 'translate(-50%, -50%)',
+                }}>
+                    <p className='flex items-center justify-center bg-red-300 text-black p-6 mx-auto'>You have succesfully Submitted the form.</p>
+                    <div className='flex items-center justify-center gap-10  flex-row'>
+                        <button className=''>View Review</button>
+                        <button>Ok</button></div>
+
+                </div>
+
+
+            )}
+
             <form className='mt-10 flex flex-col gap-10 w-1/2'
                 onSubmit={handleSubmit}
+
             >
                 <input placeholder='Username' name="username"
                     onChange={handleInputChange}
@@ -117,10 +117,13 @@ const Page = () => {
                 />
                 <button type='submit' className='bg-blue-500 text-white p-2 rounded-md'
                 // disabled={isError}
+
+
                 >Add movie</button>
             </form>
         </div>
 
-    )}
+    )
+}
 
 export default Page
