@@ -53,7 +53,7 @@ export default function Home() {
   <Link href='/add'>Watch movies</Link>
     </div>
   
-  <div className='p-4 w-full h-full flex flex-row'>
+  <div className='p-4 w-full h-full flex flex-col items-center'>
 
     
     

@@ -10,8 +10,8 @@ const MediaCard = ({
 }) => {
     const [isViewingOpinion, setIsViewingOpinion] = useState(false)
   return (
-    <div className="flex flex-col">
-    <div className=" rounded-lg overflow-hidden relative">
+    <div className="flex flex-col w-full h-screen items-center mx-auto">
+    <div className="w-full h-1/2 flex-col rounded-lg overflow-hidden ">
         <img src={img} alt={description} className="h-full object-cover"/>
         
     </div>
