@@ -10,8 +10,8 @@ const [toggleDropdown, setToggleDropdown] = useState(false);
 
   return (
     <nav className='relative px-4 py-4 flex justify-between items-center'>
-      <a className='flex flex-center ml-4'>
-    <Link href='/'>
+      
+    <Link href='/' className='flex flex-center ml-4'>
       <Image
         src='/assets/images/logo1.svg'
         width={150}
@@ -20,25 +20,25 @@ const [toggleDropdown, setToggleDropdown] = useState(false);
         className='object-contain'
       />
     </Link>
-     </a>
+    
      
     <div className='sm:flex hidden mt-2 mr-10'>
       <div className='flex gap-3 md:gap-10'>
-      <a>
+      
       <Link href='/'>
       <button className='text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2' href='/'>Home</button>
       </Link>
-      </a>
-      <a>
+      
+      
       <Link href='/add'>
       <button className='text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2' href='/add'>Add Post</button>
       </Link>
-      </a>
-      <a>
+      
+      
       <Link href='/'>
       <button className='text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2' href='/'>About</button>
       </Link>
-      </a>
+      
       
     </div>
     </div>
