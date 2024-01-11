@@ -6,7 +6,8 @@ const MediaCard = ({
     title,
     review,
     img,
-    description
+    description,
+    rating
 }) => {
     const [isViewingOpinion, setIsViewingOpinion] = useState(false)
     return (
