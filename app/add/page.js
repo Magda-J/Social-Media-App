@@ -15,53 +15,49 @@ const Page = () => {
 
 
 
+  const handleInputChange = (event) => {
+    setPostObject({
+      ...postObject,
+      [event.target.name]: event.target.value,
+    });
+  };
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
 
-    const handleInputChange = (event) => {
-        setPostObject({
-            ...postObject,
-            [event.target.name]: event.target.value,
-        })
+    if (!postObject.username || !postObject.title || !postObject.review) {
+      setIsError(true);
+      setTimeout(() => {
+        setIsError(false);
+      }, 3000);
+      return;
     }
 
+    setNewPost(postObject);
+    setIsSuccess(true);
 
+    setTimeout(() => {
+      setIsSuccess(false);
+    }, 3000);
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
+    setPostObject({
+      title: '',
+      username: '',
+      review: '',
+      img: '',
+      description: '',
+    });
+  };
 
-
-        if (!postObject.username || !postObject.title || !postObject.review) {
-            setIsError(true)
-            setTimeout(() => {
-                setIsError(false);
-            }, 3000);
-            return;
-        }
-
-        setNewPost((prevPost) => {
-            const updatedPosts = [...prevPost, postObject];
-            localStorage.setItem('posts', JSON.stringify(updatedPosts));
-
-            return updatedPosts;
-        });
-
-        setIsSuccess(true);
-
-        setTimeout(() => {
-            setIsSuccess(false)
-        }, 3000554)
-        setPostObject({
-            title: '',
-            username: '',
-            review: '',
-            img: '',
-            description: ''
-        });
-
-
-
+  useEffect(() => {
+    if (Object.keys(newPost).length > 0) {
+      const localPosts = localStorage.getItem('posts');
+      const updatedPosts = localPosts
+        ? [...JSON.parse(localPosts), newPost]
+        : [newPost];
+      localStorage.setItem('posts', JSON.stringify(updatedPosts));
     }
-
+  }, [newPost]);
 
 
     return (
