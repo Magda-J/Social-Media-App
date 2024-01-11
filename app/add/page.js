@@ -33,6 +33,14 @@ const Page = () => {
       return;
     }
 
+
+    setNewPost((prevPost) => {
+        const updatedPosts = [...prevPost, postObject];
+        localStorage.setItem('posts', JSON.stringify(updatedPosts));
+    
+        return updatedPosts;
+    });
+
     setNewPost(postObject);
     setIsSuccess(true);
 
@@ -49,15 +57,17 @@ const Page = () => {
     });
   };
 
-  useEffect(() => {
-    if (Object.keys(newPost).length > 0) {
-      const localPosts = localStorage.getItem('posts');
-      const updatedPosts = localPosts
-        ? [...JSON.parse(localPosts), newPost]
-        : [newPost];
-      localStorage.setItem('posts', JSON.stringify(updatedPosts));
-    }
-  }, [newPost]);
+
+
+
+
+//   useEffect(() => {
+//     if (Object.keys(newPost).length > 0) {
+//       const localPosts = localStorage.getItem('posts');
+//       const updatedPosts = localPosts ? [...JSON.parse(localPosts), newPost] : [newPost];
+//       localStorage.setItem('posts', JSON.stringify(updatedPosts));
+//     }
+//   }, [newPost]);
 
 
     return (
