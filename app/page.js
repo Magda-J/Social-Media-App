@@ -7,9 +7,6 @@ import Link from 'next/link';
 
 import Page from './add/page';
 
-import { Inter } from 'next/font/google'
- 
-const inter = Inter({ subsets: ['latin'] })
 
 
 export default function Home() {
@@ -18,19 +15,7 @@ export default function Home() {
 
 
   const [newPosts, setNewPosts] = useState([])
-  // const [likeCount, setLikeCount] = useState(0)
 
-  // // let totalLikes = likeCount - dislikeCount;
-
-  // const increaseLikes = () => {
-  //   setLikeCount(likeCount + 1)
-  // }
-
-  // const decreaseLikes = () => {
-  //   if (likeCount > 0) {
-  //     setLikeCount(likeCount - 1)
-  //   }
-  // }
 
 
   useEffect(() => {
@@ -58,15 +43,6 @@ export default function Home() {
 
 
 
-  //   setMovies((prevMovies) => {
-
-  //     const updatedMovies = [...prevMovies, movieObject];
-  //     localStorage.setItem('movies', JSON.stringify(updatedMovies));
-  //     return updatedMovies;
-  // });
-
-
-  // <img name="img"></img>
 
 
   return (
